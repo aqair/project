@@ -21,14 +21,14 @@
             </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
-        <view class="weui-panel__hd">日记列表</view>
+        <view class="weui-panel__nav"></view>
+        <view class="weui-panel__hd">商品列表</view>
         <view class="weui-panel__bd">
-        <block wx:if="{{diaryList.length>0}}">
-            <navigator class="weui-media-box weui-media-box_text" wx:for="{{diaryList}}" wx:key="diaryItem" url="/pages/index/detail/index?objectId={{item.objectId}}">
-              <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
-              <view class="weui-media-box__desc">{{item.content}}</view>
+            <navigator class="weui-media-box weui-media-box_text" url="/pages/index/detail/index?objectId=111">
+              <view class="weui-media-box__title weui-media-box__title_in-text">标题</view>
+              <view class="weui-media-box__desc">内容</view>
               <view class="weui-media-box__info">
-                <view class="weui-media-box__info__meta weui-media-time">时间：{{item.updatedAt}}</view>
+                <view class="weui-media-box__info__meta weui-media-time">时间：2017年07月20日</view>
                 <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:开发者</view>
                 <view class="weui-media-box__info__meta weui-media-box__info__operate">
                   <icon type="cancel" size="16"></icon>
@@ -38,13 +38,34 @@
                 </view>
               </view>
             </navigator>
-        </block><block wx:else>
-            <view class="weui-media-box weui-media-box_text">
-              <view class="weui-media-box__title weui-media-box__title_in-text">
-              暂无内容，请点击右下角添加</view>
-              <view class="weui-media-box__desc"></view>
-            </view>
-        </block>
+            <navigator class="weui-media-box weui-media-box_text" url="/pages/index/detail/index?objectId=111">
+              <view class="weui-media-box__title weui-media-box__title_in-text">标题</view>
+              <view class="weui-media-box__desc">内容</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta weui-media-time">时间：2017年07月20日</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:开发者</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__operate">
+                  <icon type="cancel" size="16"></icon>
+                  <text class="del" catchtap="deleteDiary" data-id="{{item.objectId}}">删除</text>
+                  <icon type="success" size="16"></icon>
+                  <text catchtap="toModifyDiary" data-id="{{item.objectId}}" data-content="{{item.content}}" data-title="{{item.title}}">编辑</text>
+                </view>
+              </view>
+            </navigator>
+            <navigator class="weui-media-box weui-media-box_text" url="/pages/index/detail/index?objectId=111">
+              <view class="weui-media-box__title weui-media-box__title_in-text">标题</view>
+              <view class="weui-media-box__desc">内容</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta weui-media-time">时间：2017年07月20日</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:开发者</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__operate">
+                  <icon type="cancel" size="16"></icon>
+                  <text class="del" catchtap="deleteDiary" data-id="{{item.objectId}}">删除</text>
+                  <icon type="success" size="16"></icon>
+                  <text catchtap="toModifyDiary" data-id="{{item.objectId}}" data-content="{{item.content}}" data-title="{{item.title}}">编辑</text>
+                </view>
+              </view>
+            </navigator>
         </view>
       </view>
     </view>
